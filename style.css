@@ -19,6 +19,15 @@ body {
     color: var(--text);
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+    gap: 1rem 2rem;
+
 
 
 }
@@ -32,7 +41,7 @@ h2 {
 }
 
 img {
-    width: 600;
+    width: 600px;
     height: 400px;
 
 }
@@ -60,6 +69,8 @@ a {
 
 header {
     padding: 1rem 0 0;
+    grid-area: header;
+
 
     p {
         margin: 0;
@@ -74,6 +85,7 @@ header {
 nav {
     border-top: 2px solid var(--dark);
     border-bottom: 2px solid var(--dark);
+    grid-area: nav;
 
     ul {
         display: flex;
@@ -96,14 +108,18 @@ nav {
 
 }
 
-.tiles{
+main {
+    grid-area: main;
+}
+
+.tiles {
     display: grid;
     grid-template-columns: repeat(autp-fit, minmax(9rem, 1fr));
     gap: 1rem;
 
-    .wide{
+    .wide {
         grid-column: 1/3;
-        
+
     }
 }
 
@@ -124,10 +140,17 @@ nav {
     }
 }
 
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
 .stat {
     padding: .75rem 1rem;
     border: 1px solid var(--light);
     text-align: center;
+    display: grid;
 
     strong {
         display: block;
@@ -139,6 +162,7 @@ nav {
 aside {
     padding: 1rem;
     background-color: var(--light);
+    grid-area: aside;
 
     h2 {
         margin-top: 0;
@@ -151,6 +175,9 @@ footer {
     font-size: .9rem;
     background-color: var(--dark);
     color: #ffffff;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     p {
         margin: 0;
