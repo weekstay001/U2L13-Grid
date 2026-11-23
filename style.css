@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --dark: #1b4332;
     --light: #e9f1ec;
@@ -187,5 +188,26 @@ footer {
     a:link,
     a:visited {
         color: #ffffff;
+    }
+}
+
+@media (max-width: 40rem) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    footer {
+        grid-template-columns: 2fr;
     }
 }
